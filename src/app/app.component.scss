@@ -1,0 +1,42 @@
+:host {
+
+    div {
+        height: 100%;
+
+        mat-toolbar {
+            position: fixed;
+            z-index: 1;
+
+            @media (min-width: 400px) {
+                .toolbar-section {
+                    flex: 1 1 auto;
+                }
+            }
+
+            @media (max-width: 400px) {
+                height: 67px;
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: calc(100% - 64px);
+            padding-top: 64px;
+            overflow: auto;
+
+            background: {
+                color: rgba(238, 238, 238, 0.3) !important;
+                image: url(/assets/innopolis.jpg);
+                position: center;
+                repeat: no-repeat;
+                attachment: fixed;
+                size: cover;
+                blend-mode: color;
+            }
+
+            router-outlet {
+                margin: 20px;
+            }
+        }
+    }
+}

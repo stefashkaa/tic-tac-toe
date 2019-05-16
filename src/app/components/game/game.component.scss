@@ -1,0 +1,23 @@
+$mat-card-margin: 5%;
+$width: 80%;
+
+:host {
+    mat-card {
+        margin-top: $mat-card-margin;
+        margin-left: $mat-card-margin;
+        margin-right: $mat-card-margin;
+        width: 60%;
+
+        &.title {
+            margin-left: 22%;
+            margin-right: 22%;
+            margin-top: $mat-card-margin;
+            width: 55%;
+
+            mat-card-header {
+                display: inline-block;
+                width: $width;
+            }
+        }
+    }
+}
