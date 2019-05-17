@@ -32,7 +32,6 @@
         "lodash": "^4.17.11",
         "rxjs": "6.3.3",
         "scss": "^0.2.4",
-        "ua-parser-js": "0.7.19",
         "web-animations-js": "^2.3.1",
         "zone.js": "~0.8.26"
     },
