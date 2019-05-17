@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { GameComponent } from './game.component';
 import { MaterialModule } from '../shared/material.module';
-import { CommonModule } from '@angular/common';
 import { GameService } from '../../services/game.service';
+import { LoggerService } from '../../services/logger.service';
 
 const routes: Routes = [
     { path: 'home', component: GameComponent }
@@ -17,7 +18,7 @@ const routes: Routes = [
         CommonModule
     ],
     declarations: [GameComponent],
-    providers: [GameService],
+    providers: [GameService, LoggerService],
     bootstrap: [GameComponent]
 })
 export class GameModule { }

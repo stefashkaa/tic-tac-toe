@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 
 import { Tile, EMPTY_COLOR, X_COLOR, O_COLOR } from '../core/tile';
+import { LoggerService } from './logger.service';
 
-Injectable({
+@Injectable({
     providedIn: 'root'
-});
+})
 export class GameService {
     private board: number[] = [];
     public table: Tile[] = [];
@@ -15,7 +16,7 @@ export class GameService {
     // computer = O
     private gameRunning = true;
 
-    constructor() {
+    constructor(private readonly logger: LoggerService) {
         this.reset();
     }
 
@@ -42,15 +43,15 @@ export class GameService {
     public clickCell(x: number, y: number): void {
         const index: number = 3 * (x - 1) + (y - 1);
         if (!this.gameRunning) {
-            alert('Game over');
+            this.logger.success('Game over');
             return;
         }
         if (this.board[index] === this.computerSymbol) {
-            alert('The computer protecting this box!');
+            this.logger.error('The computer protecting this box!');
             return;
         }
         if (this.board[index] === -this.computerSymbol) {
-            alert('already played');
+            this.logger.error('Already played');
             return;
         }
         this.draw(index);
@@ -62,12 +63,12 @@ export class GameService {
         this.board[index] = 1;
         if (this.win(this.board) === 1) {
             this.gameRunning = false;
-            alert('You have won!');
+            this.logger.success('You have won!');
             return;
         }
         if (this.isFull()) {
             this.gameRunning = false;
-            alert('Draw match');
+            this.logger.success('Draw match');
         } else {
             const v = this.minmax(-1, true);
             this.board[v] = -1;
@@ -75,11 +76,11 @@ export class GameService {
             this.table[v].text = 'O';
             if (this.win(this.board) === -1) {
                 this.gameRunning = false;
-                alert('You have lost!');
+                this.logger.error('You have lost!');
             } else {
                 if (this.isFull()) {
                     this.gameRunning = false;
-                    alert('Draw match');
+                    this.logger.success('Draw match');
                 }
             }
         }
