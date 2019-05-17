@@ -21,4 +21,9 @@ export class GameComponent implements OnInit {
     private clickCell(x: number, y: number): void {
         this.gameService.clickCell(x, y);
     }
+
+    private reset(): void {
+        this.gameService.reset();
+        this.tiles = this.gameService.table;
+    }
 }

@@ -23,6 +23,7 @@ export class GameService {
     public reset(): void {
         this.board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         this.table = [];
+        this.computerSymbol = -1;
         this.gameRunning = true;
         for (let i = 1; i <= 3; i++) {
             for (let j = 1; j <= 3; j++) {
