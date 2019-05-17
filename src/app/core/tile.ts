@@ -5,8 +5,8 @@ export interface Tile {
     y: number;
 }
 
-export const X_COLOR = '#25bfc4';
+export const X_COLOR = '#0080ff';
 
-export const O_COLOR = '#fac95f';
+export const O_COLOR = '#00ffff';
 
 export const EMPTY_COLOR = 'white';
