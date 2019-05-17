@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Tile, EMPTY_COLOR, X_COLOR, O_COLOR } from '../core/tile';
+
 Injectable({
     providedIn: 'root'
 });
@@ -23,7 +25,7 @@ export class GameService {
         this.gameRunning = true;
         for (let i = 1; i <= 3; i++) {
             for (let j = 1; j <= 3; j++) {
-                this.table.push({color: 'white', text: '', x: i, y: j});
+                this.table.push({color: EMPTY_COLOR, text: '', x: i, y: j});
             }
         }
     }
@@ -55,7 +57,7 @@ export class GameService {
     }
 
     private draw(index: number): void {
-        this.table[index].color = '#25bfc4';
+        this.table[index].color = X_COLOR;
         this.table[index].text = 'X';
         this.board[index] = 1;
         if (this.win(this.board) === 1) {
@@ -69,7 +71,7 @@ export class GameService {
         } else {
             const v = this.minmax(-1, true);
             this.board[v] = -1;
-            this.table[v].color = '#fac95f';
+            this.table[v].color = O_COLOR;
             this.table[v].text = 'O';
             if (this.win(this.board) === -1) {
                 this.gameRunning = false;
@@ -141,11 +143,4 @@ export class GameService {
             return v;
         }
     }
-}
-
-export interface Tile {
-    color: string;
-    text: string;
-    x: number;
-    y: number;
 }

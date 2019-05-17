@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Tile, GameService } from '../../services/game.service';
+
+import { GameService } from '../../services/game.service';
+import { Tile } from '../../core/tile';
 
 @Component({
     selector: 'app-game',
