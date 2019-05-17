@@ -20,4 +20,19 @@ $width: 80%;
             }
         }
     }
+
+    mat-grid-list {
+        margin-top: $mat-card-margin;
+        max-width: 1000px;
+        max-height: 1000px;
+
+        button {
+            width: 100%;
+            height: 100%;
+            font-size: 290px;
+            font-weight: bold;
+            border-color: blue;
+            border-style: double;
+        }
+    }
 }

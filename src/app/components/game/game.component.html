@@ -3,3 +3,12 @@
         <mat-card-title>Tic-Tac-Toe</mat-card-title>
     </mat-card-header>
 </mat-card>
+
+<div class="mat-elevation-z8">
+    <mat-grid-list cols="3" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let tile of tiles"
+                       [style.background]="tile.color">
+            <button mat-button (click)="clickCell(tile.x, tile.y)">{{tile.text}}</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
