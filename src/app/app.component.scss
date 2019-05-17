@@ -1,5 +1,13 @@
 :host {
 
+    ::-webkit-scrollbar-track {
+        margin-top: 64px;
+
+        @media (max-width: 600px) {
+            margin-top: 56px;
+        }
+    }
+
     div {
         height: 100%;
 

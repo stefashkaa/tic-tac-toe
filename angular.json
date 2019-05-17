@@ -27,7 +27,8 @@
                         ],
                         "styles": [
                             "src/assets/styles/styles.css",
-                            "src/assets/styles/theme.scss"
+                            "src/assets/styles/theme.scss",
+                            "src/assets/styles/scroll.scss"
                         ],
                         "scripts": []
                     },
@@ -78,7 +79,8 @@
                         "scripts": [],
                         "styles": [
                             "src/assets/styles/styles.css",
-                            "src/assets/styles/theme.scss"
+                            "src/assets/styles/theme.scss",
+                            "src/assets/styles/scroll.scss"
                         ],
                         "assets": [
                             "src/assets"
