@@ -1,17 +1,3 @@
-<mat-card class="mat-elevation-z8 title">
-    <mat-card-header>
-        <mat-card-title>Tic-Tac-Toe</mat-card-title>
-        <div class="reset">
-            <button mat-raised-button
-                    color="primary"
-                    (click)="reset()">
-                <mat-icon>add</mat-icon>
-                New Game
-            </button>
-        </div>
-    </mat-card-header>
-</mat-card>
-
 <div class="mat-elevation-z8 grid">
     <mat-grid-list cols="3" rowHeight="1:1">
         <mat-grid-tile *ngFor="let tile of tiles">
@@ -23,3 +9,19 @@
         </mat-grid-tile>
     </mat-grid-list>
 </div>
+
+<mat-card class="mat-elevation-z8 help">
+    <mat-card-header>
+        <mat-card-title>
+            Tic-Tac-Toe. You play by crosses, and the computer plays by zeros. You play first...
+        </mat-card-title>
+        <div class="reset">
+            <button mat-raised-button
+                    color="primary"
+                    (click)="reset()">
+                <mat-icon>add</mat-icon>
+                New Game
+            </button>
+        </div>
+    </mat-card-header>
+</mat-card>

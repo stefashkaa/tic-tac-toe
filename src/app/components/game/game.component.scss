@@ -1,24 +1,40 @@
 $default-margin: 2%;
-$width: 80%;
+$full-size: 100%;
+$width-left: 80%;
+$width-right: 20%;
+$mat-card-width: 60%;
+$grid-width: 35%;
 
 :host {
     mat-card {
-        margin: $default-margin;
-        width: 60%;
+        margin: auto;
+        width: $mat-card-width;
 
-        &.title {
-            margin-left: 22%;
+        &.help {
             margin-top: $default-margin;
-            width: 55%;
 
-            mat-card-header {
+            mat-card-title {
                 display: inline-block;
-                width: $width;
+            }
+
+            .reset {
+                display: inline-block;
+                text-align: right;
+            }
+
+            @media (max-width: 775px) {
+                mat-card-header {
+                    display: block;
+                }
+            }
+
+            @media (min-width: 1495px) {
+                ::ng-deep .mat-card-header-text {
+                    width: $width-left;
+                }
 
                 .reset {
-                    display: inline-block;
-                    width: 20%;
-                    text-align: right;
+                    width: $width-right;
                 }
             }
         }
@@ -26,14 +42,14 @@ $width: 80%;
 
     .grid {
         margin: auto;
-        width: 35%;
+        width: $grid-width;
 
         mat-grid-list {
-            width: 100%;
+            width: $full-size;
 
             button {
-                width: 100%;
-                height: 100%;
+                width: $full-size;
+                height: $full-size;
                 font-size: 150px;
                 font-weight: bold;
                 border-color: blue;
@@ -62,7 +78,7 @@ $width: 80%;
 .app-mobile {
     :host > .grid {
         @media (max-width: 500px) {
-            width: 100%;
+            width: $full-size;
 
             mat-grid-list button {
                 font-size: 70px;
